@@ -1,0 +1,53 @@
+{
+  "name": "n8n-nodes-leadforms",
+  "version": "1.0.0",
+  "description": "LeadForms nodes for n8n: instant trigger for new leads from quizzes, pages and widgets, and a node to get leads.",
+  "keywords": [
+    "n8n-community-node-package",
+    "leadforms",
+    "quiz",
+    "leads",
+    "forms"
+  ],
+  "license": "MIT",
+  "homepage": "https://leadforms.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrkravchenko93-star/n8n-nodes-leadforms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vrkravchenko93-star/n8n-nodes-leadforms/issues"
+  },
+  "author": {
+    "name": "LeadForms",
+    "email": "support@leadforms.org"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-icons.mjs",
+    "test": "npm run build && node --test test/nodes.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/LeadformsApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Leadforms/Leadforms.node.js",
+      "dist/nodes/LeadformsTrigger/LeadformsTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "n8n-workflow": "2.16.0",
+    "typescript": "5.6.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
