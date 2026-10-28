@@ -19,7 +19,7 @@ export class LeadformsTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LeadForms Trigger',
 		name: 'leadformsTrigger',
-		icon: 'file:leadforms.svg',
+		icon: { light: 'file:../../icons/leadforms.svg', dark: 'file:../../icons/leadforms.dark.svg' },
 		group: ['trigger'],
 		version: 1,
 		subtitle: 'New lead',
@@ -57,7 +57,7 @@ export class LeadformsTrigger implements INodeType {
 				const data = this.getWorkflowStaticData('node');
 				if (!data.webhookId || !data.secret) return false;
 				const list = await leadformsRequest.call(this, 'GET', '/v1/hooks');
-				const found = ((list && list.data) || []).some((h: IDataObject) => h.id === data.webhookId);
+				const found = ((list.data as IDataObject[]) || []).some((h) => h.id === data.webhookId);
 				if (!found) {
 					delete data.webhookId;
 					delete data.secret;

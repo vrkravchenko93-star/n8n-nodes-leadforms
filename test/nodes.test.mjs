@@ -120,3 +120,24 @@ test('regular node builds feed queries', async () => {
   assert.equal(calls[0].baseURL, 'https://api.leadforms.ru');
   assert.deepEqual(calls[0].qs, { quiz_ids: '1,2', limit: 10, since_id: 900000010 });
 });
+
+test('nodes and credentials have light and dark icons that ship in dist (verification)', () => {
+  const { existsSync } = require('node:fs');
+  const path = require('node:path');
+  const root = path.join(path.dirname(new URL(import.meta.url).pathname), '..');
+  const owners = [
+    [new Leadforms().description.icon, 'dist/nodes/Leadforms'],
+    [new LeadformsTrigger().description.icon, 'dist/nodes/LeadformsTrigger'],
+    [new LeadformsApi().icon, 'dist/credentials'],
+  ];
+  for (const [icon, dir] of owners) {
+    assert.equal(typeof icon, 'object');
+    for (const theme of ['light', 'dark']) {
+      assert.match(icon[theme], /^file:.+\.svg$/);
+      assert.ok(existsSync(path.join(root, dir, icon[theme].slice('file:'.length))), `${dir}: ${icon[theme]}`);
+    }
+  }
+  assert.ok(existsSync(path.join(root, 'dist/nodes/Leadforms/Leadforms.node.json')));
+  assert.ok(existsSync(path.join(root, 'dist/nodes/LeadformsTrigger/LeadformsTrigger.node.json')));
+  assert.match(new LeadformsApi().properties.find((p) => p.name === 'apiKey').description, /cp\.leadforms\.org\/app\/mcp/);
+});

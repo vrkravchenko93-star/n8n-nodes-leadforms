@@ -1,4 +1,4 @@
-import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, Icon, INodeProperties } from 'n8n-workflow';
 
 /**
  * Подключение к LeadForms: аккаунт (leadforms.org / leadforms.ru) и API-ключ из кабинета
@@ -9,7 +9,9 @@ export class LeadformsApi implements ICredentialType {
 
 	displayName = 'LeadForms API';
 
-	documentationUrl = 'https://leadforms.org';
+	icon: Icon = { light: 'file:../icons/leadforms.svg', dark: 'file:../icons/leadforms.dark.svg' };
+
+	documentationUrl = 'https://github.com/vrkravchenko93-star/n8n-nodes-leadforms#credentials';
 
 	properties: INodeProperties[] = [
 		{
@@ -30,7 +32,8 @@ export class LeadformsApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			required: true,
-			description: 'Dashboard → AI agents (MCP) → key for "Zapier / Make / n8n". Starts with lfk_.',
+			description:
+				'Create it in your LeadForms dashboard: <a href="https://cp.leadforms.org/app/mcp">AI agents and API</a> (for leadforms.ru: <a href="https://cp.leadforms.ru/app/mcp">AI agents and API</a>), purpose "Zapier / Make / n8n". Starts with lfk_.',
 		},
 	];
 

@@ -1,6 +1,6 @@
 {
   "name": "@leadforms/n8n-nodes-leadforms",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "LeadForms nodes for n8n: instant trigger for new leads from quizzes, pages and widgets, and a node to get leads.",
   "keywords": [
     "n8n-community-node-package",
@@ -10,7 +10,7 @@
     "forms"
   ],
   "license": "MIT",
-  "homepage": "https://leadforms.org",
+  "homepage": "https://github.com/vrkravchenko93-star/n8n-nodes-leadforms#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vrkravchenko93-star/n8n-nodes-leadforms.git"
@@ -20,17 +20,23 @@
   },
   "author": {
     "name": "LeadForms",
-    "email": "support@leadforms.org"
+    "email": "support@leadforms.org",
+    "url": "https://leadforms.org"
   },
-  "main": "index.js",
   "scripts": {
-    "build": "tsc && node scripts/copy-icons.mjs",
+    "build": "n8n-node build",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
     "test": "npm run build && node --test test/nodes.test.mjs",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm run lint && npm test"
   },
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
@@ -43,7 +49,9 @@
     ]
   },
   "devDependencies": {
+    "@n8n/node-cli": "0.53.0",
     "@types/node": "22.10.2",
+    "eslint": "9.29.0",
     "n8n-workflow": "2.16.0",
     "typescript": "5.6.3"
   },

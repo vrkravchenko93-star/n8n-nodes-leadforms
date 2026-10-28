@@ -23,22 +23,22 @@ export async function leadformsRequest(
 	path: string,
 	body?: IDataObject,
 	qs?: IDataObject,
-): Promise<any> {
+): Promise<IDataObject> {
 	const baseURL = await apiBase.call(this);
-	return this.helpers.httpRequestWithAuthentication.call(this, 'leadformsApi', {
+	return (await this.helpers.httpRequestWithAuthentication.call(this, 'leadformsApi', {
 		method,
 		baseURL,
 		url: path,
 		body,
 		qs,
 		json: true,
-	});
+	})) as IDataObject;
 }
 
 /** Квизы, страницы и виджеты аккаунта для выбора (GET /v1/leads/sources). */
 export async function getQuizzes(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
 	const response = await leadformsRequest.call(this, 'GET', '/v1/leads/sources');
-	return ((response && response.data) || []).map((s: { id: number; name: string; type: string }) => ({
+	return ((response.data as Array<{ id: number; name: string; type: string }>) || []).map((s) => ({
 		name: s.type === 'quiz' ? s.name : `${s.name} (${s.type})`,
 		value: s.id,
 	}));

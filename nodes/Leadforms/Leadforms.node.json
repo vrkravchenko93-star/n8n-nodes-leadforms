@@ -1,0 +1,18 @@
+{
+	"node": "@leadforms/n8n-nodes-leadforms.leadforms",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing & Content", "Sales"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/vrkravchenko93-star/n8n-nodes-leadforms#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/vrkravchenko93-star/n8n-nodes-leadforms#readme"
+			}
+		]
+	}
+}

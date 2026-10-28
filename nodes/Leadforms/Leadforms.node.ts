@@ -18,7 +18,7 @@ export class Leadforms implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LeadForms',
 		name: 'leadforms',
-		icon: 'file:leadforms.svg',
+		icon: { light: 'file:../../icons/leadforms.svg', dark: 'file:../../icons/leadforms.dark.svg' },
 		group: ['input'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
@@ -84,7 +84,7 @@ export class Leadforms implements INodeType {
 				let leads: IDataObject[];
 				if (operation === 'getSample') {
 					const r = await leadformsRequest.call(this, 'GET', '/v1/leads/sample', undefined, qs);
-					leads = r.data || [];
+					leads = (r.data as IDataObject[]) || [];
 				} else {
 					qs.limit = this.getNodeParameter('limit', i, 50) as number;
 					if (operation === 'getLatest') {
@@ -94,7 +94,7 @@ export class Leadforms implements INodeType {
 						qs.since_id = this.getNodeParameter('sinceId', i, 0) as number;
 					}
 					const r = await leadformsRequest.call(this, 'GET', '/v1/leads', undefined, qs);
-					leads = r.data || [];
+					leads = (r.data as IDataObject[]) || [];
 				}
 				out.push(...leads.map((lead) => ({ json: normalizeLead(lead), pairedItem: { item: i } })));
 			} catch (error) {
