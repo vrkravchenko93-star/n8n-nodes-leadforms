@@ -5,7 +5,7 @@
 # Trusted Publisher > GitHub Actions: owner vrkravchenko93-star, repository n8n-nodes-leadforms, workflow publish.yml.
 #
 # Release: bump "version" in package.json, commit, then tag the same version with a "v" prefix:
-#   git tag v1.0.4 && git push origin v1.0.4
+#   git tag v1.0.5 && git push origin v1.0.5
 
 name: Publish
 
@@ -23,9 +23,9 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
