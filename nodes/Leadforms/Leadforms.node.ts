@@ -59,7 +59,7 @@ export class Leadforms implements INodeType {
 				displayOptions: { show: { operation: ['getMany', 'getLatest'] } },
 			},
 			{
-				displayName: 'Quiz Names or IDs',
+				displayName: 'Quiz, Page or Widget Names or IDs',
 				name: 'quizIds',
 				type: 'multiOptions',
 				typeOptions: { loadOptionsMethod: 'getQuizzes' },

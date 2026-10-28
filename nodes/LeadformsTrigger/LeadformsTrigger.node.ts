@@ -31,7 +31,7 @@ export class LeadformsTrigger implements INodeType {
 		webhooks: [{ name: 'default', httpMethod: 'POST', responseMode: 'onReceived', path: 'webhook' }],
 		properties: [
 			{
-				displayName: 'Quiz Names or IDs',
+				displayName: 'Quiz, Page or Widget Names or IDs',
 				name: 'quizIds',
 				type: 'multiOptions',
 				typeOptions: { loadOptionsMethod: 'getQuizzes' },

@@ -19,7 +19,7 @@ Self-hosted n8n: **Settings → Community nodes → Install** → `@leadforms/n8
 
 ## Credentials
 
-1. In the LeadForms dashboard open **AI agents and API** and create a key with the purpose **Zapier / Make / n8n**
+1. In the LeadForms dashboard open **AI agents (MCP)** and create a key with the purpose **Zapier / Make / n8n**
    (it starts with `lfk_` and can only read leads and manage subscriptions).
 2. In n8n create **LeadForms API** credentials: choose your account (leadforms.org or leadforms.ru) and paste the key.
 

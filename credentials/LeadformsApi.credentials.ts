@@ -30,7 +30,7 @@ export class LeadformsApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			required: true,
-			description: 'Dashboard → AI agents and API → key for "Zapier / Make / n8n". Starts with lfk_.',
+			description: 'Dashboard → AI agents (MCP) → key for "Zapier / Make / n8n". Starts with lfk_.',
 		},
 	];
 
