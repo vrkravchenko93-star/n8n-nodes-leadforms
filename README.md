@@ -1,4 +1,4 @@
-# n8n-nodes-leadforms
+# @leadforms/n8n-nodes-leadforms
 
 [n8n](https://n8n.io) community nodes for [LeadForms](https://leadforms.org): send leads from your
 quizzes, Leadforms Pages and website widgets to any n8n workflow the moment they arrive.
@@ -15,7 +15,7 @@ Each lead also gets flat fields for easy mapping: `name`, `phone`, `email`, `com
 
 ## Installation
 
-Self-hosted n8n: **Settings → Community nodes → Install** → `n8n-nodes-leadforms`.
+Self-hosted n8n: **Settings → Community nodes → Install** → `@leadforms/n8n-nodes-leadforms`.
 
 ## Credentials
 

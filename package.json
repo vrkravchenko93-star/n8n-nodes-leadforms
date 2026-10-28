@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-leadforms",
+  "name": "@leadforms/n8n-nodes-leadforms",
   "version": "1.0.0",
   "description": "LeadForms nodes for n8n: instant trigger for new leads from quizzes, pages and widgets, and a node to get leads.",
   "keywords": [
