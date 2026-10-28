@@ -98,7 +98,7 @@ Built against `n8n-workflow` 2.x, `n8nNodesApiVersion` 1 (n8n 1.x and newer). No
 
 - [LeadForms](https://leadforms.org) · [LeadForms (Russia)](https://leadforms.ru)
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-- Support: [support@leadforms.org](mailto:support@leadforms.org), issues:
+- Support: [info@leadforms.org](mailto:info@leadforms.org), issues:
   [GitHub](https://github.com/vrkravchenko93-star/n8n-nodes-leadforms/issues)
 
 ## Development

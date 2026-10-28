@@ -1,6 +1,6 @@
 {
   "name": "@leadforms/n8n-nodes-leadforms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "LeadForms nodes for n8n: instant trigger for new leads from quizzes, pages and widgets, and a node to get leads.",
   "keywords": [
     "n8n-community-node-package",
@@ -20,7 +20,7 @@
   },
   "author": {
     "name": "LeadForms",
-    "email": "support@leadforms.org",
+    "email": "v.r.kravchenko93@gmail.com",
     "url": "https://leadforms.org"
   },
   "scripts": {
